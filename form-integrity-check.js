@@ -17,9 +17,6 @@
     * duplicate versions of jquery
 
 
-
-    try to guess if the form is an Ontraport one via the post url and the uid 
-
 */
 (function(){
 
@@ -41,7 +38,7 @@
 
     containsFormProcessorRegex = /(form_processor.php)/,
 
-    blankUidValueMessage = "This form's hidden uid field is blank",
+    blankUidValueMessage = "This form's hidden field named <b>uid</b> is blank",
     isOntraportFormMessage = 'This form appears to be an ontraport form',
     isNotOntraportFormMessage = 'This form <b>DOES NOT</b> appear to be an ontraport form',
 
@@ -72,10 +69,26 @@
 
     */
     linkedAssetUrls = {
-        'scripts': [
 
-        ],
-        'styles': [
+        'global': [
+            [
+                function(){
+                    return window.jQuery;
+                },
+                'It does not appear that this page has jquery on it'
+            ],
+            [
+                function(){
+                    return window.jQuery && window.jQuery['fn'].validate
+                },
+                'This page is missing jquery tools validate, which is used to help validate forms'
+            ],
+            [
+                function(){
+                    return window.Orderform
+                },
+                'This page is missing the code needed to render the grid'
+            ],
             [
                 '//app.ontraport.com/js/formeditor/moonrayform/paymentplandisplay/production.css',
                 'This form appears to be missing the stylesheet needed to display the product grid correctly. //app.ontraport.com/js/formeditor/moonrayform/paymentplandisplay/production.css'
@@ -114,7 +127,7 @@
 
     };
 
-    console.log('loaded')
+    console.log('ontraport form form integrity check is running');
 
     var isOntraportForm = function isOntraportForm( formElement ){
         var isOntraportForm = false,
@@ -133,7 +146,7 @@
         }
 
         var messages = '<div><ol><li>' + messages.join('</li><li>') + '</li></ol></div>';
-console.log( messages )
+
         var block = document.createElement( 'div' );
 
         block.classList.add('form-integrity-check');
@@ -204,7 +217,8 @@ console.log( messages )
 
     var forms = $('form'),
         form, 
-        messages = [];
+        messages = [],
+        hasOpForm = false;
 
     for ( var i = 0, l = forms.length; l > i; i ++ ) {
         form = forms[ i ],
@@ -216,18 +230,51 @@ console.log( messages )
 
         }else{
 
+            hasOpForm = true;
+
             messages.push( isOntraportFormMessage );
 
-            messages = messages.concat( ontraport.formInegrityCheck( form ) )
+            messages = messages.concat( ontraport.formInegrityCheck( form ) );
 
         }
 
-        console.log( form, messages)
-        renderMessages( form, messages )
+        renderMessages( form, messages );
 
     }
 
+    /*
+        do some checking on the health of the document  see if the all of the right scripts / styles are there
 
-    // if form length, then check the page for the generic linked scripts and styes
+        also take a peak into the loaded js see if the right plugins are loaded
+
+    */
+    if ( hasOpForm ) {
+         
+         messages = [];
+
+        for ( var i = 0, l = linkedAssetUrls.global.length; i < l; i ++ ) {
+
+            var urlSet = linkedAssetUrls.global[ i ],
+                url = urlSet[0];
+
+            if( typeof url == 'string' ){
+
+                if ( $( template('script[src*="{url}"], link[href*="{url}"]', { url: url } ) ).length == 0  ) {
+                    
+                    messages.push( urlSet[ 1 ] );
+
+                }
+            } else {
+                // is a function to test, if it returns false, then push the message on the stack
+                if ( !url.call( window ) ) {
+                    messages.push( urlSet[ 1 ] );
+                }
+            }
+        }
+
+        renderMessages( $('body')[0], messages );
+    }
+
+    
 
 })();

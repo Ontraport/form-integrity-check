@@ -9,7 +9,12 @@
     right: 0px;
     z-index: 20000;
 
-    background: rgba( 255, 255, 255, .8);
+    background: rgba( 255, 255, 255, .85);
     box-shadow: 0 0 1em red;
     border: 1px solid #ccc;
+}
+
+/* for "global" issue make sure they float at the top of the document */
+body > .form-integrity-check {
+    position: absolute;;
 }
