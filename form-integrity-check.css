@@ -1,0 +1,15 @@
+/*
+    basic styles for ontraport form-integrity-check
+
+*/
+
+.form-integrity-check {
+    position: relative;
+    top: 0px;
+    right: 0px;
+    z-index: 20000;
+
+    background: rgba( 255, 255, 255, .8);
+    box-shadow: 0 0 1em red;
+    border: 1px solid #ccc;
+}

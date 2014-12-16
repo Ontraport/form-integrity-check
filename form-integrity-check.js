@@ -122,6 +122,24 @@
         // if the form processor is part of the action its more than likey that its an ontraport form
         return containsFormProcessorRegex.test( fAction );
 
+    },
+
+    /*
+        show an array off messages in an unordered list in the to left of the element 
+    */
+    renderMessages = function renderMessages( element, messages ){
+        if( messages.length == 0 ){
+            return;
+        }
+
+        var messages = '<div><ol><li>' + messages.join('</li><li>') + '</li></ol></div>';
+console.log( messages )
+        var block = document.createElement( 'div' );
+
+        block.classList.add('form-integrity-check');
+        block.innerHTML = messages
+
+        element.appendChild( block )
     }
 
 
@@ -205,6 +223,7 @@
         }
 
         console.log( form, messages)
+        renderMessages( form, messages )
 
     }
 
