@@ -29,8 +29,8 @@
             if( context === undefined ){
                 context = document;
             }
-
-            return context.querySelectorAll( e );
+            // return an array instead of a node list
+            return [].slice.call( context.querySelectorAll( e ), 0 );
         },
 
         template = function t( s, d ) {
@@ -41,6 +41,7 @@
 
     containsFormProcessorRegex = /(form_processor.php)/,
 
+    blankUidValueMessage = "This form's hidden uid field is blank",
     isOntraportFormMessage = 'This form appears to be an ontraport form',
     isNotOntraportFormMessage = 'This form <b>DOES NOT</b> appear to be an ontraport form',
 
@@ -128,16 +129,17 @@
 
     ontraport.formInegrityCheck = function( formElement ){
         var messages = [],
-            uid = "";
+            uid = false;
 
         // check the form for hidden fields
         for ( var i = 0, l = hiddenFieldNames.length; i < l; i++ ){
             var fieldName = hiddenFieldNames[ i ],
                 el = $( '[name='+ fieldName +']', formElement );
+
             
-            // store the uid value to look for the formSepifc scripts / styles
-            if( fieldName == 'uid' ){
-                uid = el.value;
+            // store the uid value to look for the formSpecific scripts / styles
+            if( fieldName == 'uid' && el.length !=0 ){
+                uid = el[0].value;
             }
 
             if( el.length == 0 ){
@@ -145,8 +147,36 @@
             }
         }
 
+        if( uid !== false && ( uid == "" || uid == undefined ) ){
+            messages.push( blankUidValueMessage )
+        }
         // check for linked assets
 
+        for ( var i = 0, l = linkedAssetUrls.formSpecific.length; i < l; i ++ ) {
+
+            var urlSet = linkedAssetUrls.formSpecific[ i ],
+                url = template( urlSet[0], {uid: uid});
+
+            
+            if ( $( template('script[src*="{url}"], link[href*="{url}"]', { url: url } ) ).length == 0  ) {
+                messages.push( urlSet[ 1 ] );
+
+            }
+        }
+
+        // check the forms parents to see if it has the class moonray-form-{uid}
+        var wrapperClass = 'moonray-form-' + uid,
+            formWrapper = $( '.' + wrapperClass );
+
+        if( formWrapper.length ){
+
+            if( $( 'form', formWrapper[0] ).length == 0 ){
+
+                messages.push( template( 'The div with the class {wclass} does not contain a form', { wclass: wrapperClass }));
+            }
+        } else {
+            messages.push( template( ' missing a div with the class {wclass} wrapping the form', { wclass: wrapperClass }));
+        }
 
 
 
