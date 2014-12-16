@@ -23,13 +23,28 @@
 */
 (function(){
 
-    var $ = document.querySelectorAll,
+        var ontraport = window.ontraport || ( window.ontraport = {} ),
+
+        $ = function( e, context ){
+            if( context === undefined ){
+                context = document;
+            }
+
+            return context.querySelectorAll( e );
+        },
 
         template = function t( s, d ) {
         for ( var p in d )
             s = s.replace( new RegExp( '{' + p + '}', 'g' ), d[ p ] );
         return s;
     },
+
+    containsFormProcessorRegex = /(form_processor.php)/,
+
+    isOntraportFormMessage = 'This form appears to be an ontraport form',
+    isNotOntraportFormMessage = 'This form <b>DOES NOT</b> appear to be an ontraport form',
+
+    missingHiddenFieldMessage = "Missing hidden field named <b>{name}</b>",
     // if is an ontraport form, check to make sure that the form contains these fields
     hiddenFieldNames = [
         'contact_id',
@@ -51,6 +66,8 @@
          check the page for the the following linked assets
 
          TODO: check the also check the url for the matching uid for the form
+
+         TODO: add check for jquery, required scripts
 
     */
     linkedAssetUrls = {
@@ -94,6 +111,74 @@
             ]
         ]
 
+    };
+
+    console.log('loaded')
+
+    var isOntraportForm = function isOntraportForm( formElement ){
+        var isOntraportForm = false,
+            fAction = ""+formElement.getAttribute('action');
+        // if the form processor is part of the action its more than likey that its an ontraport form
+        return containsFormProcessorRegex.test( fAction );
+
     }
+
+
+    // to do add a method to add a message to the form
+
+    ontraport.formInegrityCheck = function( formElement ){
+        var messages = [],
+            uid = "";
+
+        // check the form for hidden fields
+        for ( var i = 0, l = hiddenFieldNames.length; i < l; i++ ){
+            var fieldName = hiddenFieldNames[ i ],
+                el = $( '[name='+ fieldName +']', formElement );
+            
+            // store the uid value to look for the formSepifc scripts / styles
+            if( fieldName == 'uid' ){
+                uid = el.value;
+            }
+
+            if( el.length == 0 ){
+                messages.push( template( missingHiddenFieldMessage, { name: fieldName } ) );
+            }
+        }
+
+        // check for linked assets
+
+
+
+
+        return messages;
+    }
+
+
+    var forms = $('form'),
+        form, 
+        messages = [];
+
+    for ( var i = 0, l = forms.length; l > i; i ++ ) {
+        form = forms[ i ],
+        messages = [];
+        
+        if( isOntraportForm( form ) == false ){
+            
+            messages.push( isNotOntraportFormMessage );
+
+        }else{
+
+            messages.push( isOntraportFormMessage );
+
+            messages = messages.concat( ontraport.formInegrityCheck( form ) )
+
+        }
+
+        console.log( form, messages)
+
+    }
+
+
+    // if form length, then check the page for the generic linked scripts and styes
 
 })();
