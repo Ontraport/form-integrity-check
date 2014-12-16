@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+<head>
+    <style type="text/css">
+        .block {
+            border: 1px solid gray;
+            margin: 2em 0;
+            padding: 2em 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>ontraport form integrity check test suite</h1>
+
+<p> each case should have a message next to each form on the page with a list of warnings if any<p>
+
+<div class="block">
+    <h2>untouched markup</h2>
+
+    <p>This form shouldn't have any warnings attached to it</p>
+
+    <link rel="stylesheet" href="//app.ontraport.com/js/formeditor/moonrayform/paymentplandisplay/production.css" type="text/css" />
+    <link rel="stylesheet" href="//forms.ontraport.com/formeditor/formeditor/css/form.default.css" type="text/css" />
+    <link rel="stylesheet" href="//forms.ontraport.com/formeditor/formeditor/css/form.publish.css" type="text/css" />
+    <link rel="stylesheet" href="//forms.ontraport.com/v2.4/include/minify/?g=moonrayCSS" type="text/css" />
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="//forms.ontraport.com/v2.4/include/formEditor/gencss.php?uid=p2cXXXfXXXX" type="text/css" />
+    <script type="text/javascript" src="//forms.ontraport.com/v2.4/include/formEditor/genjs-v3.php?html=false&uid=p2cXXXfXXXX"></script>
+    <div class="moonray-form-p2cXXXfXXXX ussr">
+        <div class="moonray-form moonray-form-label-pos-stacked">
+            <form class="moonray-form-clearfix" action="https://forms.ontraport.com/v2.4/form_processor.php?" method="post" accept-charset="UTF-8">
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-text">
+                    <label for="mr-field-element-130613281391" class="moonray-form-label">First Name</label>
+                    <input name="firstname" type="text" class="moonray-form-input" id="mr-field-element-130613281391" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-text">
+                    <label for="mr-field-element-540021022316" class="moonray-form-label">Last Name</label>
+                    <input name="lastname" type="text" class="moonray-form-input" id="mr-field-element-540021022316" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-email">
+                    <label for="mr-field-element-612559926463" class="moonray-form-label">Email</label>
+                    <input name="email" type="email" class="moonray-form-input" id="mr-field-element-612559926463" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-submit">
+                    <input type="submit" name="submit-button" value="Submit" class="moonray-form-input" id="mr-field-element-255302727455" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="afft_" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="aff_" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="sess_" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="ref_" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="own_" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="oprid" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="contact_id" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="utm_source" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="utm_medium" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="utm_term" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="utm_content" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="utm_campaign" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="referral_page" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="uid" type="hidden" value="p2cXXXfXXXX" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<div class="block">
+    <h2>hidden fields</h2>
+
+    <p>This form should have warnings for each of the missing hidden fields</p>
+
+    <link rel="stylesheet" href="//app.ontraport.com/js/formeditor/moonrayform/paymentplandisplay/production.css" type="text/css" />
+    <link rel="stylesheet" href="//forms.ontraport.com/formeditor/formeditor/css/form.default.css" type="text/css" />
+    <link rel="stylesheet" href="//forms.ontraport.com/formeditor/formeditor/css/form.publish.css" type="text/css" />
+    <link rel="stylesheet" href="//forms.ontraport.com/v2.4/include/minify/?g=moonrayCSS" type="text/css" />
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="//forms.ontraport.com/v2.4/include/formEditor/gencss.php?uid=p2cXXXfXXXX" type="text/css" />
+    <script type="text/javascript" src="//forms.ontraport.com/v2.4/include/formEditor/genjs-v3.php?html=false&uid=p2cXXXfXXXX"></script>
+    <div class="moonray-form-p2cXXXfXXXX ussr">
+        <div class="moonray-form moonray-form-label-pos-stacked">
+            <form class="moonray-form-clearfix" action="https://forms.ontraport.com/v2.4/form_processor.php?" method="post" accept-charset="UTF-8">
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-text">
+                    <label for="mr-field-element-130613281391" class="moonray-form-label">First Name</label>
+                    <input name="firstname" type="text" class="moonray-form-input" id="mr-field-element-130613281391" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-text">
+                    <label for="mr-field-element-540021022316" class="moonray-form-label">Last Name</label>
+                    <input name="lastname" type="text" class="moonray-form-input" id="mr-field-element-540021022316" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-email">
+                    <label for="mr-field-element-612559926463" class="moonray-form-label">Email</label>
+                    <input name="email" type="email" class="moonray-form-input" id="mr-field-element-612559926463" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-submit">
+                    <input type="submit" name="submit-button" value="Submit" class="moonray-form-input" id="mr-field-element-255302727455" />
+                </div>
+      
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<div class="block">
+    <h2>missing wrapper class</h2>
+
+    <p>The div that wraps this form should be missing the class "moonray-form-p2cXXXfXXXX"</p>
+
+    <link rel="stylesheet" href="//app.ontraport.com/js/formeditor/moonrayform/paymentplandisplay/production.css" type="text/css" />
+    <link rel="stylesheet" href="//forms.ontraport.com/formeditor/formeditor/css/form.default.css" type="text/css" />
+    <link rel="stylesheet" href="//forms.ontraport.com/formeditor/formeditor/css/form.publish.css" type="text/css" />
+    <link rel="stylesheet" href="//forms.ontraport.com/v2.4/include/minify/?g=moonrayCSS" type="text/css" />
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="//forms.ontraport.com/v2.4/include/formEditor/gencss.php?uid=p2cXXXfXXXX" type="text/css" />
+    <script type="text/javascript" src="//forms.ontraport.com/v2.4/include/formEditor/genjs-v3.php?html=false&uid=p2cXXXfXXXX"></script>
+    <div class="ussr">
+        <div class="moonray-form moonray-form-label-pos-stacked">
+            <form class="moonray-form-clearfix" action="https://forms.ontraport.com/v2.4/form_processor.php?" method="post" accept-charset="UTF-8">
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-text">
+                    <label for="mr-field-element-130613281391" class="moonray-form-label">First Name</label>
+                    <input name="firstname" type="text" class="moonray-form-input" id="mr-field-element-130613281391" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-text">
+                    <label for="mr-field-element-540021022316" class="moonray-form-label">Last Name</label>
+                    <input name="lastname" type="text" class="moonray-form-input" id="mr-field-element-540021022316" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-email">
+                    <label for="mr-field-element-612559926463" class="moonray-form-label">Email</label>
+                    <input name="email" type="email" class="moonray-form-input" id="mr-field-element-612559926463" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-submit">
+                    <input type="submit" name="submit-button" value="Submit" class="moonray-form-input" id="mr-field-element-255302727455" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="afft_" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="aff_" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="sess_" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="ref_" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="own_" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="oprid" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="contact_id" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="utm_source" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="utm_medium" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="utm_term" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="utm_content" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="utm_campaign" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="referral_page" type="hidden" value="" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-input-type-hidden">
+                    <input name="uid" type="hidden" value="p2cXXXfXXXX" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="block">
+    <h2>Non Ontraport form</h2>
+
+    <p>even though is a non op form it should still get a message stating that it doesnt appear to be one</p>
+
+        <div class="moonray-form moonray-form-label-pos-stacked">
+            <form class="moonray-form-clearfix" action="http://local.host" method="post" accept-charset="UTF-8">
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-text">
+                    <label for="mr-field-element-130613281391" class="moonray-form-label">First Name</label>
+                    <input name="firstname" type="text" class="moonray-form-input" id="mr-field-element-130613281391" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-text">
+                    <label for="mr-field-element-540021022316" class="moonray-form-label">Last Name</label>
+                    <input name="lastname" type="text" class="moonray-form-input" id="mr-field-element-540021022316" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-email">
+                    <label for="mr-field-element-612559926463" class="moonray-form-label">Email</label>
+                    <input name="email" type="email" class="moonray-form-input" id="mr-field-element-612559926463" />
+                </div>
+                <div class="moonray-form-element-wrapper moonray-form-element-wrapper-alignment-left moonray-form-input-type-submit">
+                    <input type="submit" name="submit-button" value="Submit" class="moonray-form-input" id="mr-field-element-255302727455" />
+                </div>
+
+
+            </form>
+        </div>
+
+
+
+</div>
+
+
+</body>
+</html>
