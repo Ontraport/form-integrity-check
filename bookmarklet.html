@@ -1,10 +1,10 @@
 
 <html>
 <head>
-<title>Gremlins.js Bookmarklet</title>
+<title>ontraport form integrity check Bookmarklet</title>
 </head>
 <body>
   <div>Drag and drop the link below to your bookmarks toolbar</div>
-  <div><a href='javascript:(function(){function callback(){gremlins.createHorde().unleash()} var s=document.createElement("script");s.src="https://rawgithub.com/marmelab/gremlins.js/master/gremlins.min.js";if(s.addEventListener){s.addEventListener("load",callback,false)}else if(s.readyState){s.onreadystatechange=callback}document.body.appendChild(s);})()' title='gremlins.js'>gremlins.js</a></div>
+  <div><a href='javascript:(function(){ var s=document.createElement("script");s.src="https://rawgit.com/Ontraport/form-integrity-check/master/form-integrity-check.js";  document.body.appendChild( s ); var c = document.createElement("link"); c.href="https://rawgit.com/Ontraport/form-integrity-check/master/form-integrity-check.css"; c.type="text/css"; c.rel="stylesheet"; document.body.appendChild(c);})()' title='ontraport form integrity check'>ontraport form integrity checker</a></div>
 </body>
 </html>
