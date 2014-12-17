@@ -102,6 +102,12 @@
                 'This page is missing the code needed to render the grid'
             ],
             [
+                function(){
+                    return  window.jQuery && window.jQuery['fn'].moonraySmartForm;
+                },
+                'This page is missing moonraySmartForm jquery plugin'
+            ],
+            [
                 // will only trigger if jq is linked more than once, if its not included on the page the jq check should catch it
                 // use common names for jquery
                 function(){
