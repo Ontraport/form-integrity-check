@@ -4,23 +4,29 @@
 */
 
 .form-integrity-check {
-    position: absolute;
-    top: 0px;
-    z-index: 20000;
 
+    box-shadow: 0 0 2em #3D3F40;
     background: rgba( 255, 255, 255, .85);
-    box-shadow: 0 0 1em black;
-    border: 1px solid #ccc;
-    border-radius: .5em;
-    padding: 1em;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    padding: .15em .55em;
     color: #0C0C0D;
+    z-index: 20000;
+    position: absolute;
+    
 }
+
+.form-integrity-check {
+    min-width: 150px;
+    max-width: 450px;
+}
+.form-integrity-check:hover {
+    background: #fff;
+    color: #000;
+}
+
+
 .form-integrity-check--target {
-    box-shadow: 0 0 1em red;
-}
-
-
-/* for "global" issue make sure they float at the top of the document */
-body > .form-integrity-check {
-    position: absolute;;
+    opacity: .7;
+    outline: 7px solid #F8FF75;
 }

@@ -93,7 +93,7 @@
                 function(){
                     return window.jQuery && window.jQuery['fn'].validator;
                 },
-                'This page is missing jquery tools validate, which is used to help validate forms'
+                'This page is missing jquery tools validator, which is used to help validate forms'
             ],
             [
                 function(){
@@ -165,9 +165,9 @@
             return;
         }
 
-        element.classList.add( 'form-integrity-check--target' );
 
-        var messages = '<div><ol><li>' + messages.join('</li><li>') + '</li></ol></div>',
+        var target = element,
+            messages = '<div><ol><li>' + messages.join('</li><li>') + '</li></ol></div>',
             block = document.createElement( 'div' ),
             pos = getElPos( element );
 
@@ -177,15 +177,17 @@
         block.style.top = pos.top +'px';
         block.style.right = pos.left +'px';
         
-
-
-        var target = element; 
-
         if ( target.tagName == "FORM" ) {
             target = target.parentNode
         }
-
-        target.appendChild( block )
+        // simple events for making it easy for the user to see what each message's target is
+        block.onmouseenter = function(){
+            target.classList.add( 'form-integrity-check--target' );
+        }
+        block.onmouseleave = function(){
+            target.classList.remove( 'form-integrity-check--target' );
+        }
+        document.body.appendChild( block );
     }
 
 
