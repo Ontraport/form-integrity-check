@@ -106,7 +106,7 @@
                 // use common names for jquery
                 function(){
                     
-                    return ( $( 'script[src*="jquery.js"], script[src*="jquery.min"]' ).length > 1  ) ? false : true;
+                    return ( $( 'script[src*="jquery.js"], script[src*="jquery.min"]' ).length >= 1  ) ? false : true;
                 },
                 'This document has jquery linked more than once, while many forms still work with this configuration, it can cause issues.'
             ],
