@@ -105,7 +105,7 @@
                 function(){
                     return  window.jQuery && window.jQuery['fn'].moonraySmartForm;
                 },
-                'This page is missing moonraySmartForm jquery plugin.'
+                'This page is missing moonraySmartForm jQuery plugin.'
             ],
             [
                 // will only trigger if jq is linked more than once, if its not included on the page the jq check should catch it
@@ -142,13 +142,14 @@
                 '//forms.ontraport.com/v2.4/include/formEditor/gencss.php?uid={uid}',
                 'This form is missing its generated css needed to display the design from formeditor'
             ],
+            // @TODO combine the next 2 checks into one
             [
                 '//forms.ontraport.com/v2.4/include/formEditor/genjs-v3.php?html=false&uid={uid}',
-                'Missing generated scripts version 3(genjs-v3), there isnt a message for missing v2 then its fine'
+                "Missing generated scripts Version 3. (Note: If you aren't getting a warning that you're also missing Version 2, then this warning can be ignored.)"
             ],
             [
                 '//forms.ontraport.com/v2.4/include/formEditor/genjs-v2.php?html=false&uid={uid}',
-                'Missing generated scripts version 2(genjs-v2), there isnt a message for missing v3 then its fine'
+                "Missing generated scripts Version 2. (Note: If you aren't getting a warning that you're also missing Version 3, then this warning can be ignored.)"
             ]
         ]
 
