@@ -50,11 +50,11 @@
     },
     containsFormProcessorRegex = /(form_processor.php)/,
 
-    blankUidValueMessage = "This form's hidden field named <b>uid</b> is blank",
-    isOntraportFormMessage = 'This form appears to be an ontraport form',
-    isNotOntraportFormMessage = 'This form <b>DOES NOT</b> appear to be an ontraport form',
+    blankUidValueMessage = "This form's hidden field named <b>uid</b> is blank.",
+    isOntraportFormMessage = 'This form appears to be an ONTRAPORT form.',
+    isNotOntraportFormMessage = 'This form <b>DOES NOT</b> appear to be an ONTRAPORT form.',
 
-    missingHiddenFieldMessage = "Missing hidden field named <b>{name}</b>",
+    missingHiddenFieldMessage = "Missing hidden field named <b>{name}</b>.",
     // if is an ontraport form, check to make sure that the form contains these fields
     hiddenFieldNames = [
         'contact_id',
@@ -87,25 +87,25 @@
                 function(){
                     return window.jQuery;
                 },
-                'It does not appear that this page has jquery on it'
+                'It does not appear that this page has jQuery on it.'
             ],
             [
                 function(){
                     return window.jQuery && window.jQuery['fn'].validator;
                 },
-                'This page is missing jquery tools validator, which is used to help validate forms'
+                'This page is missing jQuery tools validator, which is used to help validate forms.'
             ],
             [
                 function(){
                     return window.Orderform;
                 },
-                'This page is missing the code needed to render the grid'
+                'This page is missing the code needed to render the grid.'
             ],
             [
                 function(){
                     return  window.jQuery && window.jQuery['fn'].moonraySmartForm;
                 },
-                'This page is missing moonraySmartForm jquery plugin'
+                'This page is missing moonraySmartForm jquery plugin.'
             ],
             [
                 // will only trigger if jq is linked more than once, if its not included on the page the jq check should catch it
@@ -114,19 +114,19 @@
                     
                     return ( $( 'script[src*="jquery.js"], script[src*="jquery.min"]' ).length >= 1  ) ? false : true;
                 },
-                'This document has jquery linked more than once, while many forms still work with this configuration, it can cause issues.'
+                'This document has jQuery linked more than once, while many forms still work with this configuration, it can cause issues.'
             ],
             [
                 '//app.ontraport.com/js/formeditor/moonrayform/paymentplandisplay/production.css',
-                'This form appears to be missing the stylesheet needed to display the product grid correctly. //app.ontraport.com/js/formeditor/moonrayform/paymentplandisplay/production.css'
+                'This form appears to be missing the stylesheet needed to display the product grid correctly.'
             ],
             [
                 '//forms.ontraport.com/formeditor/formeditor/css/form.default.css',
-                'Missing //forms.ontraport.com/formeditor/formeditor/css/form.default.css which is needed for the default styles'
+                'Missing //forms.ontraport.com/formeditor/formeditor/css/form.default.css which is needed for the default styles.'
             ],
             [
                 '//forms.ontraport.com/formeditor/formeditor/css/form.publish.css',
-                'Missing //forms.ontraport.com/formeditor/formeditor/css/form.publish.css which is needed for the default styles'
+                'Missing //forms.ontraport.com/formeditor/formeditor/css/form.publish.css '
             ],
             [
                 '//forms.ontraport.com/v2.4/include/minify/?g=moonrayCSS',
@@ -134,7 +134,7 @@
             ],
             [
                 '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css',
-                'Missing jquery ui css, //ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css'
+                'Missing jQuery ui css, //ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css'
             ]
         ],
         'formSpecific': [
@@ -144,17 +144,17 @@
             ],
             [
                 '//forms.ontraport.com/v2.4/include/formEditor/genjs-v3.php?html=false&uid={uid}',
-                'Missing generated scripts version 3, there isnt a message for missing v2 then its fine'
+                'Missing generated scripts version 3(genjs-v3), there isnt a message for missing v2 then its fine'
             ],
             [
                 '//forms.ontraport.com/v2.4/include/formEditor/genjs-v2.php?html=false&uid={uid}',
-                'Missing generated scripts version 2, there isnt a message for missing v3 then its fine'
+                'Missing generated scripts version 2(genjs-v2), there isnt a message for missing v3 then its fine'
             ]
         ]
 
     };
 
-    console.log('ontraport form form integrity check is running');
+    console.log('ONTRAPORT form form integrity check is running');
 
     var isOntraportForm = function isOntraportForm( formElement ){
         var isOntraportForm = false,
@@ -316,6 +316,8 @@
 
         renderMessages( $('body')[0], messages );
     }
+
+    console.log( 'done' );
 
     
 
