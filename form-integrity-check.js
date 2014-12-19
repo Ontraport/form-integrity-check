@@ -121,16 +121,16 @@
                 'This form appears to be missing the stylesheet needed to display the product grid correctly.'
             ],
             [
-                '//forms.ontraport.com/formeditor/formeditor/css/form.default.css',
-                'Missing //forms.ontraport.com/formeditor/formeditor/css/form.default.css which is needed for the default styles.'
+                'formeditor/formeditor/css/form.default.css',
+                'Missing formeditor/formeditor/css/form.default.css which is needed for the default styles.'
             ],
             [
-                '//forms.ontraport.com/formeditor/formeditor/css/form.publish.css',
-                'Missing //forms.ontraport.com/formeditor/formeditor/css/form.publish.css '
+                'formeditor/formeditor/css/form.publish.css',
+                'Missing formeditor/formeditor/css/form.publish.css '
             ],
             [
-                '//forms.ontraport.com/v2.4/include/minify/?g=moonrayCSS',
-                'Missing moonrayCSS. //forms.ontraport.com/v2.4/include/minify/?g=moonrayCSS'
+                'v2.4/include/minify/?g=moonrayCSS',
+                'Missing moonrayCSS. v2.4/include/minify/?g=moonrayCSS'
             ],
             [
                 '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css',
@@ -139,16 +139,16 @@
         ],
         'formSpecific': [
             [
-                '//forms.ontraport.com/v2.4/include/formEditor/gencss.php?uid={uid}',
+                'v2.4/include/formEditor/gencss.php?uid={uid}',
                 'This form is missing its generated css needed to display the design from formeditor'
             ],
             // @TODO combine the next 2 checks into one
             [
-                '//forms.ontraport.com/v2.4/include/formEditor/genjs-v3.php?html=false&uid={uid}',
+                'v2.4/include/formEditor/genjs-v3.php?html=false&uid={uid}',
                 "Missing generated scripts Version 3. (Note: If you aren't getting a warning that you're also missing Version 2, then this warning can be ignored.)"
             ],
             [
-                '//forms.ontraport.com/v2.4/include/formEditor/genjs-v2.php?html=false&uid={uid}',
+                'v2.4/include/formEditor/genjs-v2.php?html=false&uid={uid}',
                 "Missing generated scripts Version 2. (Note: If you aren't getting a warning that you're also missing Version 3, then this warning can be ignored.)"
             ]
         ]
