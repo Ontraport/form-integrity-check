@@ -249,7 +249,7 @@
                 messages.push( template( 'The div with the class {wclass} does not contain a form', { wclass: wrapperClass }));
             }
         } else {
-            messages.push( template( ' missing a div with the class {wclass} wrapping the form', { wclass: wrapperClass }));
+            messages.push( template( 'Missing a div with the class {wclass} wrapping the form', { wclass: wrapperClass }));
         }
 
 
