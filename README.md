@@ -7,13 +7,13 @@ After scanning the page, it will place one or more message boxes on the page. Th
 
 This tool currently checks and creates warnings for the following components:
 
-    * hidden fields
-    * div form wrapper classes
-    * scripts
-        * genjs
-        * validator
-    * css
-    * form post url
+ * hidden fields
+ * div form wrapper classes
+ * scripts
+     * genjs
+     * validator
+ * css
+ * form post url
 
 You can either clone and link the script on your page while you're customizing your form or grab the bookmarklet.
 
