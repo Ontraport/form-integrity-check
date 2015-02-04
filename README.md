@@ -17,7 +17,7 @@ This tool currently checks and creates warnings for the following components:
 
 You can either clone and link the script on your page while you're customizing your form or grab the bookmarklet.
 
-To "install" the **bookmarklet**. Go to [this page](https://rawgit.com/Ontraport/form-integrity-check/master/bookmarklet.html) and drag the link into your bookmark toolbar. Then when visiting a page with an ONTRAPORT form, click the bookmark to check it out.
+To "install" the **bookmarklet**. Go to [this page](https://rawgit.com/Ontraport/form-integrity-check/master/bookmarklet.html) and drag the link into your bookmark toolbar. Then when visiting a page with an ONTRAPORT form, click the bookmark to check it out or check out the [test page](https://cdn.rawgit.com/Ontraport/form-integrity-check/master/tests/index.html)
 
 Think you found a bug or want to add another check? Please either submit an issue or fork and create a pull request.
 
